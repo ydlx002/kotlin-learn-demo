@@ -64,4 +64,19 @@ class Person2(
 
 fun main3(){
     val person = Person2("bob",true);//调用构造方法不需要new
+    //直接访问属性,不需要通过get
+    println(person.name);
+    //直接设置属性，不要通过set
+    person.isMarried = true;
 }
+
+//自定义访问器
+class Person3(val height: Int, val width: Int){
+    val isSquare: Boolean
+    get() {
+        return height == width
+    }
+}
+
+//在kotlin中，可以把多个类放在同一个文件中，文件的名字还可以随意选择。包层级结构不要遵循目录层级结构
+
